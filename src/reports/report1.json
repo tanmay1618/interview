@@ -1,0 +1,52 @@
+{
+    "candidate_name": "[Candidate's Name]",
+    "date": "[Interview Date]",
+    "interviewer": "[Your Name]",
+    "introduction": {
+      "candidate_background": "[Brief background]",
+      "current_role_responsibilities": "[Details]"
+    },
+    "questionnaire": {
+      "questions": [
+        {
+          "question": "[Question 1]",
+          "response": "[Candidate's response]"
+        },
+        {
+          "question": "[Question 2]",
+          "response": "[Candidate's response]"
+        },
+        {
+          "question": "[Question 3]",
+          "response": "[Candidate's response]"
+        }
+      ],
+      "evaluation": "[Strong/Moderate/Needs Improvement]"
+    },
+    "database_design_problem": {
+      "problem_statement": "[Brief description]",
+      "candidate_approach": {
+        "schema_design": "[Schema details]",
+        "normalization_denormalization": "[Key observations]",
+        "scalability_considerations": "[Insights]"
+      },
+      "evaluation": "[Strong/Moderate/Needs Improvement]"
+    },
+    "coding_question": {
+      "problem_statement": "[Brief description]",
+      "candidate_approach": {
+        "understanding": "[How well did they grasp the problem?]",
+        "logic_pseudocode": "[Brief description]",
+        "code_implementation": "[Correct/Optimized/Incomplete]",
+        "edge_cases_considered": "[List]"
+      },
+      "hints_provided": "[Yes/No and details]",
+      "evaluation": "[Strong/Moderate/Needs Improvement]"
+    },
+    "overall_feedback": {
+      "strengths": "[Candidate strengths]",
+      "areas_of_improvement": "[Areas for improvement]",
+      "final_recommendation": "[Strongly Recommend/Recommend/Borderline/Not Recommend]"
+    }
+  }
+  
