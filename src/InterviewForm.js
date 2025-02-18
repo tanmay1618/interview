@@ -12,7 +12,6 @@ const InterviewForm = () => {
   const [blogInsert, setBlogInsert] = useState(false);
 
   const getData=async()=>{
-    console.log("Getting data")
     const response = await getList("interview_feedback",{"id":id})
     //console.log("blog",response);
     if (response.length > 0){
@@ -24,7 +23,6 @@ const InterviewForm = () => {
   }
 
   useEffect(()=>{
-    console.log("Getting data............e")
     getData();
   },[id])
 
@@ -209,7 +207,7 @@ const InterviewForm = () => {
       <label>Problem Statement:
         <textarea name="problem_statement" value={formData.database_design_problem.problem_statement} onChange={(e) => handleChange(e, "database_design_problem")} />
       </label>
-      <label>Schema Design:
+      <label>Feedback:
         <textarea name="schema_design" value={formData.database_design_problem.candidate_approach.schema_design} onChange={(e) => handleChange(e, "database_design_problem", "candidate_approach")} />
       </label>
 
@@ -224,7 +222,7 @@ const InterviewForm = () => {
       <label>Problem Statement:
         <textarea name="problem_statement" value={formData.coding_question.problem_statement} onChange={(e) => handleChange(e, "coding_question")} />
       </label>
-      <label>Schema Design:
+      <label>Feedback:
         <textarea name="schema_design" value={formData.coding_question.candidate_approach.schema_design} onChange={(e) => handleChange(e, "coding_question", "candidate_approach")} />
       </label>
 
