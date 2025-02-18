@@ -1,7 +1,9 @@
 {
+    "basic_details":{
     "candidate_name": "[Candidate's Name]",
     "date": "[Interview Date]",
-    "interviewer": "[Your Name]",
+    "interviewer": "[Your Name]"
+    },
     "introduction": {
       "candidate_background": "[Brief background]",
       "current_role_responsibilities": "[Details]"

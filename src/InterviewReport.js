@@ -1,13 +1,13 @@
 import React from "react";
 import report from './reports/report1.json';
 
-const InterviewReport = () => {
+const InterviewReport = ({report}) => {
   return (
     <div style={styles.container}>
       <h2>Interview Report</h2>
-      <p><strong>Candidate Name:</strong> {report.candidate_name}</p>
-      <p><strong>Date:</strong> {report.date}</p>
-      <p><strong>Interviewer:</strong> {report.interviewer}</p>
+      <p><strong>Candidate Name:</strong> {report.basic_details.candidate_name}</p>
+      <p><strong>Date:</strong> {report.basic_details.date}</p>
+      <p><strong>Interviewer:</strong> {report.basic_details.interviewer}</p>
 
       <section style={styles.overallSection}>
         <h3>Overall Feedback & Recommendation</h3>
