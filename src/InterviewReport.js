@@ -31,6 +31,7 @@ const InterviewReport = ({report}) => {
           </div>
         ))}
         <p><strong>Evaluation:</strong> {report.questionnaire.evaluation}</p>
+        <p><strong>Score:</strong> {report.questionnaire.score}</p>
       </section>
 
       <section style={styles.section}>
@@ -40,6 +41,7 @@ const InterviewReport = ({report}) => {
         <p><strong>Normalization/Denormalization:</strong> {report.database_design_problem.candidate_approach.normalization_denormalization}</p>
         <p><strong>Scalability Considerations:</strong> {report.database_design_problem.candidate_approach.scalability_considerations}</p>
         <p><strong>Evaluation:</strong> {report.database_design_problem.evaluation}</p>
+        <p><strong>Score:</strong> {report.database_design_problem.score}</p>
       </section>
 
       <section style={styles.section}>
@@ -51,6 +53,7 @@ const InterviewReport = ({report}) => {
         <p><strong>Edge Cases Considered:</strong> {report.coding_question.candidate_approach.edge_cases_considered}</p>
         <p><strong>Hints Provided:</strong> {report.coding_question.hints_provided}</p>
         <p><strong>Evaluation:</strong> {report.coding_question.evaluation}</p>
+        <p><strong>Score:</strong> {report.coding_question.score}</p>
       </section>
 
 

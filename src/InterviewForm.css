@@ -63,6 +63,19 @@
 
   .main-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
+
+  .form-container {
+    width: 50%;
+}
+
+.interview-report {
+  width: 50%;
+}
+
+.interview-feedback {
+  display: flex;
+  flex-direction: row;
+}
   

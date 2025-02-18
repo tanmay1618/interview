@@ -12,17 +12,21 @@ const InterviewForm = () => {
   const [blogInsert, setBlogInsert] = useState(false);
 
   const getData=async()=>{
+    console.log("Getting data")
     const response = await getList("interview_feedback",{"id":id})
     //console.log("blog",response);
     if (response.length > 0){
-      setFormData(response[0]["data"]);
-      setBlogInsert(true);
+      if (response[0]["data"] !== null){
+        setFormData(response[0]["data"]);
+        setBlogInsert(true);
+      }
     }
   }
 
   useEffect(()=>{
+    console.log("Getting data............e")
     getData();
-  },[])
+  },[id])
 
   const [formData, setFormData] = useState({
     basic_details:{
@@ -113,6 +117,7 @@ const InterviewForm = () => {
   return (
     <div className="main-container">
     <Navbar/>
+    <div className="interview-feedback">
     <div className="form-container">
 
     <button onClick={saveForm}>Submit</button>
@@ -130,6 +135,7 @@ const InterviewForm = () => {
         Interviewer:
         <input type="text" name="interviewer" value={formData.basic_details.interviewer} onChange={(e) => handleChange(e, "basic_details")} />
       </label>
+      <hr style={{ border: "2px solid black", margin: "20px 0" }} />
 
       <h3>Overall Feedback</h3>
       <label>Strengths:
@@ -156,6 +162,8 @@ const InterviewForm = () => {
         </select>
       </label>
 
+      <hr style={{ border: "2px solid black", margin: "20px 0" }} />
+
       <h3>Introduction</h3>
       <label>
         Background:
@@ -165,6 +173,10 @@ const InterviewForm = () => {
         Current Role:
         <textarea name="current_role_responsibilities" value={formData.introduction.current_role_responsibilities} onChange={(e) => handleChange(e, "introduction")} />
       </label>
+
+
+
+      <hr style={{ border: "2px solid black", margin: "20px 0" }} />
 
       <h3>Questionnaire</h3>
       {formData.questionnaire.questions.map((q, index) => (
@@ -203,8 +215,10 @@ const InterviewForm = () => {
 
       <label>
         Score (Out of 10):
-        <input type="number" max="10" min="0" name="score" value={formData.coding_question.score} onChange={(e) => handleChange(e, "coding_question")} />
+        <input type="number" max="10" min="0" name="score" value={formData.database_design_problem.score} onChange={(e) => handleChange(e, "database_design_problem")} />
       </label>
+
+      <hr style={{ border: "2px solid black", margin: "20px 0" }} />
 
       <h3>Coding Problem</h3>
       <label>Problem Statement:
@@ -216,15 +230,17 @@ const InterviewForm = () => {
 
       <label>
         Score (Out of 10):
-        <input type="number" max="10" min="0" name="score" value={formData.coding_question.score} onChange={(e) => handleChange(e, "coding_problem")} />
+        <input type="number" max="10" min="0" name="score" value={formData.coding_question.score} onChange={(e) => handleChange(e, "coding_question")} />
       </label>
 
+      <hr style={{ border: "2px solid black", margin: "20px 0" }} />
       
       </div>
       </div>
-      <div>
+      <div className="interview-report">
       <h3>Generated Report</h3>
       <InterviewReport report={formData} />
+      </div>
       </div>
       </div>
   );

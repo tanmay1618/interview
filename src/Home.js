@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import InterviewTable from './InterviewTable';
 
 
 function Home() {
@@ -6,7 +7,7 @@ function Home() {
 
   return (
     <div className='app'>
-        {"Home"}
+        <InterviewTable/>
     </div>
   );
 }
