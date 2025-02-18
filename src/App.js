@@ -13,6 +13,7 @@ import ProtectedRoute from './ProtectedRoute';
 import './App.css';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { ToastProvider } from './BaseComponent/Toast/ToastContext';
+import InterviewFormFrontend from './InterviewFormFrontend';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -35,6 +36,10 @@ function App() {
           <Route 
                 path="/interview-form/:id" 
                 element={<ProtectedRoute isAuthenticated={isAuthenticated}><InterviewForm /></ProtectedRoute>} />
+
+<Route 
+                path="/interview-form/frontend/:id" 
+                element={<ProtectedRoute isAuthenticated={isAuthenticated}><InterviewFormFrontend /></ProtectedRoute>} />
           <Route path="/login" element={<Login/>} />
           {/* Add more routes here as needed */}
         </Routes>

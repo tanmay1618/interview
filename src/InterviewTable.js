@@ -23,12 +23,20 @@ const columns = [
         "headerName": "Interview Time"
     },
     {
+        "field": "type",
+        "headerName": "Interview Type"
+    },
+    {
+        "field": "interviewer_id",
+        "headerName": "Interviewer"
+    },
+    {
         field: 'action',
         headerName: 'Feeback Link',
         width: 170,
         renderCell: (params) => (
             <div className="action">
-                <Link to={'/interview-form/'+params.row.id}>
+                <Link to={params.row.type === 'Frontend' ? '/interview-form/frontend/'+params.row.id : '/interview-form/'+params.row.id}>
                     <button type="button" className="view_btn">
                         Feedback
                     </button>

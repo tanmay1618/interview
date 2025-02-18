@@ -4,7 +4,7 @@ import logo from './logo.png';
 const Navbar = () => {
   return (
     <nav style={styles.navbar}>
-      <img src={logo} alt="Logo" style={styles.logo} />
+      {/*<img src={logo} alt="Logo" style={styles.logo} />*/}
     </nav>
   );
 };
