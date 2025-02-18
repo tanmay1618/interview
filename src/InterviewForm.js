@@ -17,8 +17,9 @@ const InterviewForm = () => {
     if (response.length > 0){
       if (response[0]["data"] !== null){
         setFormData(response[0]["data"]);
-        setBlogInsert(true);
+        
       }
+      setBlogInsert(true);
     }
   }
 
