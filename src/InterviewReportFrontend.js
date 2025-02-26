@@ -1,13 +1,22 @@
-import React from "react";
-import report from './reports/report1.json';
+import React, { useRef } from "react";
+import generatePDF from "react-to-pdf";
 
 const InterviewReportFrontend = ({report}) => {
+  const ref = useRef();
+
+  const handlePrint=()=>{ 
+    generatePDF(ref, {
+    filename: report.basic_details.candidate_name + ".pdf",
+    })
+  };
+
   return (
-    <div style={styles.container}>
+    <div>
+      <button onClick={handlePrint}>Download PDF</button>
+    <div ref={ref}  style={styles.container}>
       <h2>Interview Report</h2>
       <p><strong>Candidate Name:</strong> {report.basic_details.candidate_name}</p>
       <p><strong>Date:</strong> {report.basic_details.date}</p>
-      <p><strong>Interviewer:</strong> {report.basic_details.interviewer}</p>
 
       <section style={styles.overallSection}>
         <h3>Overall Feedback & Recommendation</h3>
@@ -23,7 +32,7 @@ const InterviewReportFrontend = ({report}) => {
       </section>
 
       <section style={styles.section}>
-        <h3>2. React Questions</h3>
+        <h3>2. Angular Questions</h3>
         {report.react_questions.questions.map((q, index) => (
           <div key={index} style={styles.question}>
             <p><strong>Q:</strong> {q.question}</p>
@@ -50,16 +59,11 @@ const InterviewReportFrontend = ({report}) => {
       <section style={styles.section}>
         <h3>3. Coding Question</h3>
         <p><strong>Problem Statement:</strong> {report.coding_question.problem_statement}</p>
-        <p><strong>Understanding:</strong> {report.coding_question.candidate_approach.understanding}</p>
-        <p><strong>Logic & Pseudocode:</strong> {report.coding_question.candidate_approach.logic_pseudocode}</p>
-        <p><strong>Code Implementation:</strong> {report.coding_question.candidate_approach.code_implementation}</p>
-        <p><strong>Edge Cases Considered:</strong> {report.coding_question.candidate_approach.edge_cases_considered}</p>
-        <p><strong>Hints Provided:</strong> {report.coding_question.hints_provided}</p>
-        <p><strong>Evaluation:</strong> {report.coding_question.evaluation}</p>
         <p><strong>Score:</strong> {report.coding_question.score}</p>
       </section>
 
 
+    </div>
     </div>
   );
 };

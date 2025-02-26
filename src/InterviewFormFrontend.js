@@ -225,7 +225,7 @@ const InterviewFormFrontend = () => {
 
       <label>
         Score (Out of 10):
-        <input type="number" max="10" min="0" name="score" value={formData.react_questions.score} onChange={(e) => handleChange(e, "js_questions")} />
+        <input type="number" max="10" min="0" name="score" value={formData.js_questions.score} onChange={(e) => handleChange(e, "js_questions")} />
       </label>
 
       <h3>Coding Problem</h3>
